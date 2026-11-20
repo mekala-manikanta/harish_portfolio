@@ -1,155 +1,109 @@
 %-------------------------------------------------------------------------------
-% Resume: Ukkisala Harish
-% Compiles on Overleaf with the default pdfLaTeX compiler (XeLaTeX also works).
-% Overleaf: New Project -> Blank Project -> replace main.tex with this file.
+% Resume: Ukkisala Harish  (one page, ATS-friendly)
+% Overleaf: New Project -> Blank Project -> paste this into main.tex -> Recompile.
+% Uses only standard packages; compiles with pdfLaTeX (Overleaf default).
 %-------------------------------------------------------------------------------
-\documentclass[11pt,a4paper]{article}
+\documentclass[10pt,a4paper]{article}
 
-%----------------------------- Packages ----------------------------------------
-\usepackage{iftex}
-\ifPDFTeX
-  \usepackage[T1]{fontenc}
-  \usepackage[utf8]{inputenc}
-  \input{glyphtounicode}   % makes the PDF text readable by ATS parsers
-  \pdfgentounicode=1
-\fi
-\usepackage[default]{sourcesanspro}
-\usepackage[a4paper,top=1.5cm,bottom=1.5cm,left=1.7cm,right=1.7cm]{geometry}
-\usepackage{xcolor}
-\usepackage{titlesec}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=1.4cm]{geometry}
 \usepackage{enumitem}
-\usepackage{tabularx}
-\usepackage{array}
+\usepackage{titlesec}
 \usepackage[hidelinks]{hyperref}
 
-%----------------------------- Colors ------------------------------------------
-\definecolor{ink}{RGB}{47,45,66}      % headings and name
-\definecolor{body}{RGB}{40,40,48}     % main text
-\definecolor{muted}{RGB}{100,100,115} % dates and secondary text
-\definecolor{accent}{RGB}{214,150,0}  % thin accent rule
+\input{glyphtounicode}   % keeps the PDF text readable by ATS software
+\pdfgentounicode=1
 
-\AtBeginDocument{\color{body}}
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
-\linespread{1.06}
 
-%----------------------------- Section style -----------------------------------
-\titleformat{\section}
-  {\color{ink}\large\bfseries}
-  {}{0pt}{\MakeUppercase}
-  [\vspace{-6pt}{\color{accent}\titlerule[0.9pt]}]
-\titlespacing*{\section}{0pt}{11pt}{6pt}
+% Section headings: bold caps with a rule underneath
+\titleformat{\section}{\large\bfseries}{}{0pt}{\MakeUppercase}[\vspace{-5pt}\rule{\linewidth}{0.6pt}]
+\titlespacing*{\section}{0pt}{9pt}{4pt}
 
-%----------------------------- Lists -------------------------------------------
-\setlist[itemize]{leftmargin=1.15em, label={\color{ink}\textbullet}, itemsep=1.5pt, parsep=0pt, topsep=3pt}
+% Tight bullet lists
+\setlist[itemize]{leftmargin=1.2em, itemsep=1pt, parsep=0pt, topsep=2pt}
 
-%----------------------------- Custom commands ---------------------------------
-% \job{Company}{Role}{Dates}
-\newcommand{\job}[3]{%
-  \vspace{4pt}
-  \leavevmode{\color{ink}\textbf{\large #1}} \hfill {\color{muted}\textbf{#3}}\\[1pt]
-  \textit{#2}\par\vspace{2pt}}
-
-% \project{Project name}{Environment}
-\newcommand{\project}[2]{%
-  \vspace{3pt}
-  \textbf{Project:} #1\\
-  {\small\color{muted}\textit{Environment:} #2}\par}
-
-% Skill row inside the skills table
-\newcommand{\skillrow}[2]{\textbf{#1} & #2 \\[2.5pt]}
+% \role{Company}{Dates}{Title}{Client project}
+\newcommand{\role}[4]{%
+  \vspace{4pt}\par
+  \textbf{#1} \hfill \textbf{#2}\\
+  \textit{#3} \hfill \textit{#4}\par}
 
 %===============================================================================
 \begin{document}
 
 %----------------------------- Header ------------------------------------------
 \begin{center}
-  {\color{ink}\fontsize{24}{28}\selectfont\bfseries Ukkisala Harish}\\[5pt]
-  {\large Informatica IICS \& Cloud Data Engineer}\\[5pt]
-  \href{mailto:harishu799@gmail.com}{harishu799@gmail.com}
-  \quad{\color{muted}|}\quad
-  \href{tel:+917995144528}{+91 79951 44528}
-  \quad{\color{muted}|}\quad
-  India
-  % Uncomment and add the portfolio link once it is deployed:
-  % \quad{\color{muted}|}\quad \href{https://your-portfolio.vercel.app}{your-portfolio.vercel.app}
+  {\LARGE\bfseries UKKISALA HARISH}\\[3pt]
+  {\large Informatica IICS \& Cloud Data Engineer \,|\, 4+ Years}\\[3pt]
+  \href{mailto:harishu799@gmail.com}{harishu799@gmail.com} \,|\,
+  +91 79951 44528 \,|\, India
+  % Add the portfolio link once it is live, for example:
+  % \,|\, \href{https://harish-portfolio.vercel.app}{harish-portfolio.vercel.app}
 \end{center}
 
 %----------------------------- Summary -----------------------------------------
-\section{Professional Summary}
-Informatica and cloud data engineer with \textbf{4+ years} of hands-on experience in ETL development,
-data integration and cloud data warehousing. Skilled in \textbf{Informatica Intelligent Cloud Services
-(IICS/IDMC)}, \textbf{PowerCenter 10.x}, \textbf{SQL}, \textbf{Snowflake} and \textbf{AWS S3}.
-Experienced in migrating legacy DataStage ETL to IICS, building CDC and incremental loads,
-tuning SQL and Informatica sessions, and modeling SCD Type 1/2/3 dimensions for reinsurance,
-healthcare, pharma and insurance clients.
+\section{Summary}
+ETL developer with \textbf{4+ years} building and tuning data pipelines in \textbf{Informatica IICS,
+PowerCenter, Snowflake, Oracle and AWS S3}. Led a \textbf{DataStage-to-IICS migration with zero data loss},
+moved enterprise data from Greenplum, Oracle and SQL Server into Snowflake, and delivered
+SCD Type 1/2/3 warehouse loads for reinsurance, healthcare, pharma and insurance clients.
+
+%----------------------------- Key achievements --------------------------------
+\section{Key Achievements}
+\begin{itemize}
+  \item \textbf{Led the end-to-end migration} of legacy DataStage ETL to IICS for Fidelis Healthcare (Centene), with CDC and full reconciliation: \textbf{zero data loss}.
+  \item \textbf{Migrated large-scale data to Snowflake} from Greenplum, Oracle and SQL Server across multi-state healthcare programs.
+  \item \textbf{Built an automated audit framework in Snowflake} that tracks every pipeline run, workload performance and data quality.
+  \item \textbf{Shortened data load windows} by tuning SQL and Informatica sessions, partitioning sources and adding incremental loads.
+\end{itemize}
 
 %----------------------------- Skills ------------------------------------------
 \section{Technical Skills}
-\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{4.1cm}X@{}}
-  \skillrow{ETL / Integration}{IICS / IDMC (Data Integration, Taskflows, Mass Ingestion), Informatica PowerCenter 10.x, DataStage}
-  \skillrow{Cloud \& Storage}{Snowflake Data Cloud, AWS S3, AWS EC2, Managed File Transfer (MFT / B2B), SFTP}
-  \skillrow{Databases \& SQL}{Oracle 21c / 12c, SQL Server, MySQL, Greenplum; complex SQL and query tuning}
-  \skillrow{Data Warehousing}{Dimensional modeling, SCD Type 1/2/3, fact and dimension tables, CDC, data cleansing, audit frameworks}
-  \skillrow{Scheduling \& Scripting}{Unix shell scripting, Control-M}
-  \skillrow{Tools}{Git / GitHub, JIRA, PuTTY, WinSCP}
-\end{tabularx}
+\textbf{ETL:} Informatica IICS / IDMC (Data Integration, Taskflows, Mass Ingestion), PowerCenter 10.x, DataStage\\
+\textbf{Cloud \& Databases:} Snowflake, AWS S3, AWS EC2, Oracle 21c/12c, SQL Server, MySQL, Greenplum\\
+\textbf{Data Warehousing:} Dimensional modeling, SCD Type 1/2/3, CDC, fact \& dimension tables, audit frameworks\\
+\textbf{Tools:} SQL tuning, Unix shell scripting, Control-M, MFT/SFTP, Git/GitHub, JIRA, WinSCP
 
 %----------------------------- Experience --------------------------------------
-\section{Professional Experience}
+\section{Experience}
 
-\job{ValueMomentum}{Informatica Cloud ETL Developer}{Apr 2026 -- Aug 2026}
-\project{Munich RE (Global Reinsurance Solutions)}{IICS, PowerCenter, Oracle SQL, Snowflake, JIRA}
+\role{ValueMomentum}{Apr 2026 -- Aug 2026}{Informatica Cloud ETL Developer}{Client: Munich RE}
 \begin{itemize}
-  \item Built and optimized high-performance \textbf{IICS mappings, taskflows and PowerCenter workflows} to integrate complex reinsurance data into Oracle and Snowflake data warehouses.
-  \item Implemented business rules with Source Qualifier, Connected/Unconnected Lookup, Joiner, Aggregator, Router and Expression transformations.
-  \item Established \textbf{incremental loading frameworks} and created reusable mapplets and dynamic mapping tasks to standardize the ETL lifecycle.
-  \item Monitored and tuned Informatica workflows and SQL queries, resolving bottlenecks and \textbf{reducing data load windows}.
-  \item Configured automated Taskflows with Event Wait, Command and Decision tasks; coordinated deployments and production support with Agile teams.
+  \item Built and optimized IICS mappings, taskflows and PowerCenter workflows loading reinsurance data into Oracle and Snowflake.
+  \item Set up incremental load frameworks, reusable mapplets and dynamic mapping tasks to standardize ETL delivery.
+  \item Tuned slow workflows and SQL queries to cut load windows; automated runs with Event Wait, Command and Decision tasks.
 \end{itemize}
 
-\job{Innova Solutions}{Informatica Cloud ETL Developer}{Sep 2024 -- Aug 2025}
-\project{Fidelis Healthcare, Centene Corporation}{IICS, DataStage, Oracle SQL, Snowflake, Greenplum, AWS S3, AWS EC2, GitHub}
+\role{Innova Solutions}{Sep 2024 -- Aug 2025}{Informatica Cloud ETL Developer}{Client: Fidelis Healthcare (Centene)}
 \begin{itemize}
-  \item Led the \textbf{end-to-end migration of legacy DataStage ETL code to IICS}, modernizing data ingestion and processing across multi-state healthcare programs.
-  \item Engineered \textbf{Change Data Capture (CDC)} processes and custom DataStage-to-IICS migration utilities, maintaining data integrity with \textbf{zero data loss}.
-  \item Executed large-scale data migration from Greenplum, Oracle and SQL Server to \textbf{Snowflake}, ensuring performance, scalability and schema compatibility.
-  \item Automated inbound and outbound file transfer pipelines through AWS S3 and EC2 using IICS cloud connectors.
-  \item Directed end-to-end data validation and reconciliation testing across source and target tables for QA and UAT sign-offs.
+  \item Led the DataStage-to-IICS migration, building CDC processes and custom migration utilities with zero data loss.
+  \item Migrated large datasets from Greenplum, Oracle and SQL Server to Snowflake with full schema compatibility.
+  \item Automated inbound and outbound file pipelines through AWS S3 and EC2; ran source-to-target reconciliation for QA and UAT sign-off.
 \end{itemize}
 
-\job{NTT DATA Services}{Informatica IICS Cloud Developer}{Jul 2022 -- Feb 2023}
-\project{Aventis Pharma}{IICS, Oracle SQL, Snowflake, Unix Shell Scripting}
+\role{NTT DATA Services}{Jul 2022 -- Feb 2023}{Informatica IICS Cloud Developer}{Client: Aventis Pharma}
 \begin{itemize}
-  \item Designed enterprise ETL pipelines loading pharmaceutical sales, marketing and prescription data into Oracle staging and the Snowflake data warehouse.
-  \item Engineered \textbf{parameterized mapping templates} (database and table-level object parameterization) for Stage, Dimension (SCD Type 1 \& 2) and Fact loads.
-  \item Designed and deployed an automated \textbf{Data Integration Audit Framework in Snowflake} to monitor pipeline execution, workload performance and data quality.
-  \item Used IICS In/Out Parameters, Expression Macros and Source Partitioning to optimize throughput on large datasets.
-  \item Authored technical specifications, source-to-target mapping documents (STMs) and unit test plans.
+  \item Delivered ETL pipelines for pharma sales, marketing and prescription data into Oracle staging and Snowflake.
+  \item Built parameterized mapping templates for Stage, SCD Type 1/2 Dimension and Fact loads.
+  \item Designed a Snowflake audit framework for run monitoring and data quality; raised throughput with source partitioning.
 \end{itemize}
 
-\job{Bluefield Technologies}{Informatica IICS \& PowerCenter Developer}{Apr 2020 -- Jul 2022}
-\project{NiFi2 -- Kaiser Permanente}{IICS, Oracle SQL, AWS S3, Snowflake, Unix, WinSCP, Control-M}
+\role{Bluefield Technologies}{Apr 2020 -- Jul 2022}{Informatica IICS \& PowerCenter Developer}{Clients: Kaiser Permanente, Allstate}
 \begin{itemize}
-  \item Built secure file ingestion pipelines from SFTP servers to AWS S3 staging using \textbf{IICS Mass Ingestion} and \textbf{Managed File Transfer (MFT/B2B)}.
-  \item Designed and maintained mapping tasks and parallel taskflows to process real-time and batch healthcare data into Snowflake and Oracle.
-  \item Implemented \textbf{SCD Type 1, 2 and 3} logic for historical tracking; automated batch runs and file triggers with Unix shell scripts and Control-M.
-\end{itemize}
-\project{Allstate Insurance}{Informatica PowerCenter 10.x, Oracle SQL, Unix}
-\begin{itemize}
-  \item Extracted OLTP customer, policy and claims data using PowerCenter, with Lookup, Aggregator, Joiner and Router transformations loading enterprise data marts.
-  \item Tuned complex SQL queries and Informatica session parameters to fix bottlenecked jobs; wrote error-handling scripts for production reliability.
+  \item Built secure SFTP-to-AWS S3 ingestion with IICS Mass Ingestion and MFT for Kaiser Permanente healthcare data.
+  \item Implemented SCD Type 1/2/3 loads into Snowflake and Oracle; scheduled batch jobs with Unix scripts and Control-M.
+  \item Loaded Allstate customer, policy and claims data marts with PowerCenter; tuned SQL and sessions on slow jobs.
 \end{itemize}
 
 %----------------------------- Education ---------------------------------------
 \section{Education}
-\begin{tabularx}{\textwidth}{@{}X>{\raggedleft\arraybackslash}p{2.2cm}>{\raggedleft\arraybackslash}p{2.2cm}@{}}
-  \textbf{B.Tech, Electronics \& Communication Engineering} & 2018 & 59.07\% \\
-  {\color{muted}Ananthalakshmi Institute of Technology and Sciences} & & \\[4pt]
-  \textbf{Diploma, Electronics \& Communication Engineering} & 2015 & 79.27\% \\
-  {\color{muted}Sree Vidyanikethan Engineering College} & & \\[4pt]
-  \textbf{Secondary School Certificate (10th)} & 2012 & 9.0 GPA \\
-  {\color{muted}Priyadarsini Vidhya Mandhir} & & \\
-\end{tabularx}
+\textbf{B.Tech, Electronics \& Communication Engineering} \hfill 2018\\
+Ananthalakshmi Institute of Technology and Sciences\\[3pt]
+\textbf{Diploma, Electronics \& Communication Engineering} \hfill 2015\\
+Sree Vidyanikethan Engineering College
 
 \end{document}

@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// base './' lets the built site work from any sub-path (e.g. GitHub Pages)
+// The site is served from the domain root on Vercel and Render.
 export default defineConfig({
   plugins: [react()],
-  base: './',
+  base: '/',
 })
