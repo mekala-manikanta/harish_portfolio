@@ -11,19 +11,19 @@ export const profile = {
   leadBefore: 'I build ',
   leadHighlight: 'cloud data pipelines',
   intro:
-    "I design and run ETL pipelines with Informatica IICS and PowerCenter that move enterprise data into Oracle and Snowflake. In 4+ years I've migrated legacy DataStage code to IICS, built CDC and incremental loads, tuned slow SQL and sessions, and modeled SCD Type 1/2/3 dimensions for reinsurance, healthcare, pharma and insurance clients.",
+    "I design and run ETL pipelines with Informatica IICS and PowerCenter that move enterprise data into Oracle and Snowflake. In 5+ years I've migrated legacy DataStage code to IICS, built CDC and incremental loads, tuned slow SQL and sessions, and modeled SCD Type 1/2/3 dimensions for reinsurance, healthcare, pharma and insurance clients.",
   stack: ['IICS', 'PowerCenter', 'Snowflake', 'Oracle', 'AWS S3', 'SQL', 'Unix', 'Control-M'],
   email: 'harishu799@gmail.com',
   phone: '+91 7995144528',
   location: 'India',
   // Put a photo in the public/ folder and set its name here, e.g. 'harish.jpg'.
-  photo: '',
+  photo: 'harish.jpg',
   // Resume PDF in the public/ folder. Set to '' to hide the resume buttons.
   resume: 'resume.pdf',
 }
 
 export const stats = [
-  { value: '4+ yrs', label: 'ETL and data integration experience, since Apr 2020' },
+  { value: '5+ yrs', label: 'ETL and data integration experience, since Apr 2020' },
   { value: '4', label: 'Companies, from Bluefield to ValueMomentum' },
   { value: '5', label: 'Enterprise client projects' },
   { value: '4', label: 'Domains: reinsurance, healthcare, pharma, insurance' },

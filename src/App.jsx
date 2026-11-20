@@ -156,7 +156,7 @@ function HeroVisual() {
         </span>
         <div>
           <small>ETL & data integration</small>
-          <strong>4+ years</strong>
+          <strong>5+ years</strong>
         </div>
       </div>
 
