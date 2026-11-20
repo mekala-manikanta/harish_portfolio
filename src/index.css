@@ -479,8 +479,8 @@ strong {
 /* Hero visual */
 .hero-visual {
   position: relative;
-  max-width: 440px;
-  margin-left: auto;
+  max-width: 340px;
+  margin: 0 auto;
   padding: 36px 0 40px;
 }
 .visual-frame {
