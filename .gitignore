@@ -1,0 +1,12 @@
+node_modules
+dist
+
+# Source documents kept out of the repo (personal records)
+Harish_Service_History.pdf
+U_Harish_IICS_IPC_Resume.pdf
+
+# LaTeX build output
+resume/*.aux
+resume/*.log
+resume/*.out
+resume/*.pdf
