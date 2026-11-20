@@ -461,10 +461,14 @@ function Contact() {
     <section id="contact" className="section">
       <div className="container contact-grid">
         <aside className="contact-card">
-          <div className="contact-visual">
-            {profile.photo ? <img src={profile.photo} alt={profile.name} /> : <span>{profile.initials}</span>}
+          <div className={`contact-visual ${profile.photo ? 'has-photo' : ''}`}>
+            {profile.photo ? (
+              <img src={profile.photo} alt={profile.name} className="contact-avatar" />
+            ) : (
+              <span>{profile.initials}</span>
+            )}
           </div>
-          <div className="contact-body">
+          <div className={`contact-body ${profile.photo ? 'has-photo' : ''}`}>
             <h3>{profile.name}</h3>
             <p className="contact-sub">ETL Developer · Informatica IICS · Snowflake</p>
             <ul>
